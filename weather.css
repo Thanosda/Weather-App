@@ -2,12 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Times New Roman", Times, serif;
 }
 
 body{
    
-    background: rgba(0, 0, 0, 0.842);
+   
+  height: 150vh; /* Full height of the screen */
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background: rgba(0, 0, 0, 0.842);
+
+
 }
 
 .card{
@@ -15,7 +22,7 @@ body{
     max-width:400px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: whitesmoke;
-    margin: 100px auto 0;
+    
     border-radius:20px;
     text-align: center;
     padding: 40px 35px;
@@ -56,3 +63,56 @@ body{
     width: 19px;
 
 }
+.weather-icon{
+    width: 250px;
+    margin-top: -50px ;
+    padding: 15%;
+}
+h1{
+    font-size: 80px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-top: -50px;
+
+}
+h2{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.rain{
+    height: 200px;
+}
+
+.detail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img{
+    width: 40px;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+
+.col p{
+    margin: 5px 0;
+}
+
+.humidity, .wind{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+    
