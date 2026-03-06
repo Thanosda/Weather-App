@@ -3,45 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather-App</title>
+    <title>WeatherNow — Live Weather</title>
+    <meta name="description" content="Get real-time weather updates for any city with WeatherNow." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="weather.css" />
   </head>
   <body>
+
+    <!-- Animated background orbs -->
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+    <div class="bg-orb orb3"></div>
+
     <div class="card">
+
+      <!-- Header -->
+      <div class="card-header">
+        <div class="app-title">
+          <span class="app-icon">🌤</span>
+          <span>WeatherNow</span>
+        </div>
+        <div class="current-time" id="current-time"></div>
+      </div>
+
+      <!-- Search -->
       <div class="search">
-        <input
-          type="text"
-          placeholder="Enter Your Location "
-          spellcheck="false"
-        />
-        <button><img src="images/search.png" alt="search-bt" /></button>
-       
+        <div class="search-wrapper">
+          <span class="search-icon-left">🔍</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search city..."
+            spellcheck="false"
+            autocomplete="off"
+          />
+        </div>
+        <button id="search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
       </div>
-       <p class="notifier"></p>
-     
-      <div class="weather-icon">
-        <img class="rain" src="images/rain.png" alt="weather-icon" />
-      </div>
-      <h1 class="temp">22°c</h1>
-      <h2 class="city">Pondicherry</h2>
-      <div class="detail">
-        <div class="col">
-          <img src="images/humidity.png" alt="humidity-icon" />
-          <div>
-            <p class="humidity">50%</p>
-            <p>Humidity</p>
+
+      <!-- Notifier -->
+      <p class="notifier" id="notifier"></p>
+
+      <!-- Weather Display -->
+      <div class="whole">
+        <div class="weather-main">
+          <div class="weather-icon">
+            <img class="rain" src="images/rain.png" alt="weather-icon" />
+          </div>
+          <div class="weather-info">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">Pondicherry</h2>
+            <p class="weather-desc">Rainy</p>
           </div>
         </div>
-        <div class="col">
-          <img class="windimg" src="images/wind.png" alt="wind-icon" />
-          <div>
-            <p class="wind">15 Km/h</p>
-            <p>Wind Speed</p>
+
+        <!-- "Feels Like" + Condition Badge -->
+        <div class="condition-row">
+          <div class="feels-badge">
+            <span class="badge-label">🌡 Feels Like</span>
+            <span class="feels-temp">21°C</span>
+          </div>
+          <div class="condition-badge">
+            <span class="cond-label">Rain</span>
+          </div>
+        </div>
+
+        <!-- Detail row -->
+        <div class="detail">
+          <div class="col">
+            <div class="col-icon">💧</div>
+            <div class="col-info">
+              <p class="humidity">50%</p>
+              <p class="col-label">Humidity</p>
+            </div>
+          </div>
+          <div class="divider-v"></div>
+          <div class="col">
+            <div class="col-icon">💨</div>
+            <div class="col-info">
+              <p class="wind">15 km/h</p>
+              <p class="col-label">Wind Speed</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Default prompt when no data yet -->
+      <div class="empty-prompt" id="empty-prompt" style="display:none;">
+        <div class="empty-icon">🌍</div>
+        <p>Search for a city to get started</p>
+      </div>
+
     </div>
-    
 
     <script src="weather.js"></script>
   </body>
