@@ -92,4 +92,4 @@ searchBox.addEventListener("keydown", (e) => {
 });
 
 // ── Initial load ────────────────────────────────────────────────
-fetchWeather("Delhi");
+fetchWeather("pondicherry");
