@@ -31,4 +31,4 @@ It displays live weather data such as **temperature, humidity, wind speed, and c
 ## ⚙️ Setup & Usage
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/Weather-App.git
+   git clone https://github.com/thanosda/Weather-App.git
